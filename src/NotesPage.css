@@ -1,0 +1,160 @@
+/* Main container */
+.notes-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.notes-container:hover {
+    box-shadow: 0 6px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #37474f; /* Dark slate color */
+    margin-bottom: 20px;
+}
+
+/* Forms */
+.note-form,
+.edit-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.note-form input,
+.edit-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #90caf9; /* Light blue for input borders */
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.2s ease;
+}
+
+.note-form input:focus,
+.edit-form input:focus {
+    border-color: #2196f3; /* Blue for focus effect */
+    outline: none;
+}
+
+/* Button Styles */
+.add-button,
+.record-button,
+.stop-button,
+.edit-button,
+.cancel-button,
+.delete-button {
+    background-color: #2196f3; /* Nice blue */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center; /* Align text and icon */
+    justify-content: center;
+    width: 130px; /* Fixed width for buttons */
+}
+
+.add-button:hover,
+.record-button:hover,
+.stop-button:hover,
+.edit-button:hover,
+.cancel-button:hover,
+.delete-button:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+}
+
+/* Audio section */
+.audio-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Waveform Animation */
+.waveform {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, rgba(33, 150, 243, 0.7) 40%, rgba(33, 150, 243, 0.3) 60%);
+    border-radius: 5px;
+    animation: waveform-animation 1s infinite;
+    margin: 10px 0;
+}
+
+@keyframes waveform-animation {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    25% {
+        transform: scaleY(1.1);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+    75% {
+        transform: scaleY(1.1);
+    }
+}
+
+/* Transcription display */
+.transcript {
+    font-style: italic;
+    color: #616161; /* Dark gray for transcript text */
+}
+
+/* Notes List */
+.notes-list {
+    margin-top: 20px;
+}
+
+.note {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Light gray for notes border */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0; /* Add margin for spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.note:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons in note list */
+.delete-button {
+    background-color: #f44336; /* Red */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .note-form,
+    .edit-form {
+        flex-direction: column;
+    }
+
+    .note-form input,
+    .edit-form input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .add-button,
+    .edit-button,
+    .cancel-button {
+        width: 100%; /* Make buttons full width on small screens */
+    }
+}
